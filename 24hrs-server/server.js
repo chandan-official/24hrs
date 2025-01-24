@@ -29,8 +29,7 @@ connectDB();
 
 // Routes
 app.use('/auth', router);
-router.post('/signup', signup);
-router.post('/login', login);
+
 
 // Global Error Handling Middleware
 app.use((err, req, res, next) => {

@@ -30,7 +30,7 @@ async function loginUser() {
   const loginData = { email, password };
 
   try {
-    const response = await fetch('http://192.168.29.14:3003/login', {
+    const response = await fetch('http://192.168.29.14:3003/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ async function registerUser() {
   };
 
   try {
-    const response = await fetch('http://192.168.29.14:3003/signup', {
+    const response = await fetch('http://192.168.29.14:3003/auth/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ async function registerUser() {
 
     if (response.ok) {
       alert('Registration successful!');
-      window.location.href = '/login';  // Redirect to login page after successful registration
+      
     } else {
       alert('Registration failed: ' + data.message);
     }
@@ -117,6 +117,7 @@ async function registerUser() {
     alert('An error occurred. Please try again later.');
   }
 }
+
 
 function generatePlan() {
   const mockPlan = {

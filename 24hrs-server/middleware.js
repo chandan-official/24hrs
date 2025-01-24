@@ -10,16 +10,13 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 /**
  * Middleware to validate signup data
  */
+// Validate signup data middleware (no username validation)
 const validateSignup = (req, res, next) => {
-  const { username, email, password, age,
-    weight,
-    height,
-    activity,
-    goal } = req.body;
+  const { name, email, password, age, weight, height, activity, goal } = req.body;
 
-  // Check for missing fields
-  if (!username || !email || !password) {
-    return res.status(400).json({ message: 'Username, email, and password are required.' });
+  // Check for missing required fields
+  if (!name || !email || !password) {
+    return res.status(400).json({ message: 'Name, email, and password are required.' });
   }
 
   // Validate email format
@@ -35,6 +32,7 @@ const validateSignup = (req, res, next) => {
 
   next();
 };
+
 
 /**
  * Middleware to validate login data

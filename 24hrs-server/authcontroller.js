@@ -1,4 +1,3 @@
-// authcontroller.js
 import bcrypt from 'bcryptjs';  // Default import
 import jwt from 'jsonwebtoken';  // Default import for jsonwebtoken
 const { sign } = jwt;  // Destructure `sign` from the jsonwebtoken module
@@ -10,7 +9,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_key';
 // Signup Controller
 export const signup = async (req, res) => {
   try {
-    const { username, email, password, age,
+    const { name, email, password, age,
       weight,
       height,
       activity,
@@ -24,9 +23,14 @@ export const signup = async (req, res) => {
 
     // Create new user
     const newUser = new User({
-      username,
+      name,
       email,
       password, // The password will be hashed in the pre-save hook
+      age,
+      weight,
+      height,
+      activity,
+      goal
     });
 
     await newUser.save();
@@ -62,7 +66,7 @@ export const login = async (req, res) => {
     res.status(200).json({
       message: 'Login successful.',
       token,
-      user: { id: user._id, username: user.username, email: user.email },
+      user: { id: user._id, email: user.email },
     });
   } catch (error) {
     console.error('Login Error:', error);
