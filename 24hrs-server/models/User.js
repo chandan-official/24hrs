@@ -43,6 +43,14 @@ const UserSchema = new Schema({
         type: Number,
         required: [true, 'Age is required'],
     },
+    activity: {
+        type: String,
+        required: [true, 'Activity is required'],
+    },
+    goal: {
+        type: String,
+        required: [true, 'Goal is required'],
+    },
     mesdical_history: {
         type: String,
     },

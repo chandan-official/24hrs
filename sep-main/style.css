@@ -1,95 +1,202 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
+  background-color: #cef1e8;
   color: #333;
 }
 
-header {
-  background-color: #6200ea;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+/* Navigation Styles */
+nav h1 {
+  margin: 0;
+  font-size: 2rem;
 }
 
 nav {
+  background-color: #05374a;
+  color: white;
+  padding: 1.8rem;
   display: flex;
-  justify-content: center;
-  background-color: #3700b3;
-  padding: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 1rem;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  background-color: white;
+  color: #05374a;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  transform: scale(1.2);
+  transition: all 0.3s ease;
 }
 
-.container {
-  width: 100%;
+/* Carousel and Text Section */
+.carousel-and-text {
+  display: flex;
+  flex-direction: row; /* Side by side layout */
+  align-items: center; /* Center the items vertically */
+  margin: 1rem auto;
+  max-width: 1200px;
   padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 600px;
-}
-
-.hidden {
-  display: none;
-}
-
-/* Carousel styles */
-.carousel {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  margin: auto;
-  overflow: hidden;
-  border-radius: 8px;
+  gap: 1rem; /* Space between image and text */
 }
 
 .carousel-images {
-  display: flex;
-  transition: transform 1s ease-in-out;
+  flex: 1; /* Allow image to take up available space */
+  max-width: 50%; /* Limit image width */
 }
 
 .carousel-images img {
   width: 100%;
-  max-height: 300px;
-  flex-shrink: 0;
+  height: auto;
+  max-height: 480px;
   object-fit: cover;
+  border-radius: 15px;
 }
 
-.carousel-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
+.text {
+  flex: 1; /* Allow text sections to take up the remaining space */
+  width: 48%; /* Ensure the text sections do not take up more space than half */
+  background-color: rgba(241, 191, 191, 0.8); /* Add transparency for better visibility over the image */
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.text h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #05374a;
+}
+
+.text p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #05374a;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.6rem;
+  background-color: #05374a;
+  margin-left: 5px;
+  margin-bottom: -2px;
+  animation: blink 1s step-end infinite;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none;
+}
+
+.container-and-text2 {
   display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
+  flex-direction: row-reverse; /* Reverse the order (image on right, text on left) */
+  align-items: center; /* Center the items vertically */
+  margin: 1rem auto;
+  max-width: 1200px;
+  padding: 1rem;
+  gap: 1rem; /* Space between image and text */
 }
 
-.carousel-button {
-  background-color: rgba(0, 0, 0, 0.5);
+.container-image {
+  flex: 1; /* Allow image to take up available space */
+  max-width: 50%; /* Limit image width */
+}
+
+.container-image img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.text2 {
+  flex: 1; /* Allow text sections to take up the remaining space */
+  width: 48%; /* Ensure the text sections do not take up more space than half */
+  background-color: rgba(241, 191, 191, 0.8); /* Add transparency for better visibility over the image */
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.text2 h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #05374a;
+}
+
+.text2 p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #05374a;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.blinking-cursor2 {
+  display: inline-block;
+  width: 3px;
+  height: 1.6rem;
+  background-color: #05374a;
+  margin-left: 3px;
+  margin-bottom: -5.2px;
+  animation: blink 1s step-end infinite;
+}
+
+.start{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+  max-width: 1200px;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: #034c5d;
   color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 4px;
+  height: 30px;
+  width: 180px;
+  border-radius: 25px;
 }
 
-.carousel-button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.start a{
+  color: white;
+  text-decoration: none;
 }
 
-/* Styles for Login, Register, and Plans */
+/* Form and Button Styles */
 .form-group {
   margin-bottom: 1rem;
 }
@@ -110,14 +217,14 @@ input {
 }
 
 input:focus {
-  border-color: #6200ea;
+  border-color: #05374a;
   outline: none;
 }
 
 button {
   width: 100%;
   padding: 1rem;
-  background-color: #6200ea;
+  background-color: #05374a;
   color: white;
   border: none;
   border-radius: 5px;
@@ -127,13 +234,10 @@ button {
 }
 
 button:hover {
-  background-color: #3700b3;
+  background-color: #034c5d;
 }
 
-h2 {
-  margin-bottom: 1rem;
-}
-
+/* Plans Section */
 #plans-container {
   margin-top: 1rem;
   background: #f9f9f9;
@@ -154,14 +258,14 @@ h2 {
 }
 
 .plan strong {
-  color: #6200ea;
+  color: #05374a;
 }
 
 #plans-container button {
   margin-top: 1rem;
   width: auto;
   padding: 0.5rem 1rem;
-  background-color: #6200ea;
+  background-color: #05374a;
   color: white;
   border-radius: 5px;
   font-size: 1rem;
@@ -169,5 +273,5 @@ h2 {
 }
 
 #plans-container button:hover {
-  background-color: #3700b3;
+  background-color: #034c5d;
 }

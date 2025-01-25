@@ -35,6 +35,8 @@ export const signup = async (req, res) => {
 
     await newUser.save();
     res.status(201).json({ message: 'User registered successfully.' });
+    
+    
   } catch (error) {
     console.error('Signup Error:', error);
     res.status(500).json({ message: 'Internal server error.' });
@@ -59,15 +61,25 @@ export const login = async (req, res) => {
     }
 
     // Generate JWT token
-    const token = sign({ id: user._id, email: user.email }, JWT_SECRET, {
+    const token = sign({ id: user._id, email: user.email}, JWT_SECRET, {
       expiresIn: '1h',
     });
 
     res.status(200).json({
       message: 'Login successful.',
       token,
-      user: { id: user._id, email: user.email },
+      user: { id: user._id, email: user.email,age: user.age,
+        weight: user.weight,
+        height: user.height,
+        activity: user.activity,
+        goal: user.goal, },
     });
+    localStorage.setItem('name', JSON.stringify(data.user.name));
+    localStorage.setItem('age', JSON.stringify(data.user.age)); 
+    localStorage.setItem('weight', JSON.stringify(data.user.weight));
+    localStorage.setItem('height', JSON.stringify(data.user.height));
+    localStorage.setItem('activity', JSON.stringify(data.user.activity));
+    localStorage.setItem('goal', JSON.stringify(data.user.goal));
   } catch (error) {
     console.error('Login Error:', error);
     res.status(500).json({ message: 'Internal server error.' });

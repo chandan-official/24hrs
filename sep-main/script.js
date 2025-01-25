@@ -43,7 +43,15 @@ async function loginUser() {
     if (response.ok) {
       alert('Login successful!');
       localStorage.setItem('token', data.token);
-      window.location.href = '/dashboard';  // Redirect after successful login (or another page)
+      localStorage.setItem('user', JSON.stringify(data.user));
+      localStorage.setItem('email', JSON.stringify(data.user.email));
+      localStorage.setItem('age', JSON.stringify(data.user.age));
+      localStorage.setItem('weight', JSON.stringify(data.user.weight));
+      localStorage.setItem('height', JSON.stringify(data.user.height));
+      localStorage.setItem('activity', JSON.stringify(data.user.activity));
+      localStorage.setItem('goal', JSON.stringify(data.user.goal));
+      window.location.href = 'http://192.168.29.14:5500/sep-main/dashboard.html';
+      // Redirect after successful login (or another page)
     } else {
       alert('Login failed: ' + data.message);
     }

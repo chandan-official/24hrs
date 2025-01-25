@@ -5,29 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personalized Health Assistant</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Updated Font Awesome to version 5+ -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Personalized Health Assistant</h1>
-  </header>
+
   <nav>
+    <h1>Personalized Health Assistant</h1>
     <a href="index.html">Home</a>
     <a href="login.html">Login</a>
     <a href="register.html">Register</a>
     <a href="#plans" onclick="showPage('plans')">Plans</a>
   </nav>
 
-  <div id="home" class="container" style="padding: 0;">
-    <h2 style="padding: 1rem;">Welcome to Personalized Health Assistant</h2>
-    <!-- Carousel for Sliding Images -->
-    <div class="carousel">
-      <div class="carousel-images">
-        <img src="WhatsApp Image 2025-01-24 at 4.16.30 PM.jpeg" alt="Slide 1">
-        <img src="WhatsApp Image 2025-01-24 at 4.16.31 PM (1).jpeg" alt="Slide 2">
-        <img src="WhatsApp Image 2025-01-24 at 4.16.31 PM.jpeg" alt="Slide 3">
-      </div>
+  <!-- Carousel and Text Section -->
+  <div class="carousel-and-text">
+    <div class="carousel-images">
+      <img src="assets/Tropical Fruit Salad Bowl - Vegan Delights.jpeg" alt="Health Image 1">
     </div>
-    <p style="padding: 1rem;">Your journey to better health starts here. Navigate through the menu to explore!</p>
+    <!-- Text Section 1 -->
+    <div class="text">
+      <h2>Welcome to Personalized Health Assistant<span class="blinking-cursor"></span></h2>
+      <p>Get personalized health plans and track your progress with our health assistant.</p>
+    </div>
+  </div>
+
+  <!-- Home Section -->
+   <div class="container-and-text2">
+  <div id="home" class="container-image">
+    <img src="assets/Family Cooking Together.jpeg" alt="Family Cooking Together">
+    <!-- <p style="padding: 1rem;">Your journey to better health starts here. Navigate through the menu to explore!</p> -->
+  </div>
+  <div class="text2">
+    <h2>Monitor your Health with Technology<span class="blinking-cursor2"></span></h2>
+    <p>Your journey to better health starts here. Navigate through the menu to explore!</p>
+  </div>
   </div>
 
   <script src="script.js"></script>
